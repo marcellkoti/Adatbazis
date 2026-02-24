@@ -1,0 +1,105 @@
+SQL utasítások csoportosítása
+
+DDL - Data Definition Language
+	Adatbázis szerkezete
+	- CREATE
+	- ALTER
+	- DROP
+DML - Data Manipulating Language
+	Adatok szerkesztése
+	- INSERT
+	- UPDATE
+	- DELETE
+DQL - Data Query Language
+	- SELECT
+DCL -Data Control Language 
+
+Adatbázis készítése
+create database mi_autoker
+    -> charset=utf8
+    -> collate=utf8_hungarian_ci;
+
+DQL - SELECT
+
+SELECT * | mezőlista | aggregációs függvény
+FROM Tábla | táblalista | Kapcsolatok
+WHERE feltétel/ek
+..
+..
+ORDER BY mezőnév/ek | sorszám ASC/DESC
+;
+Aggregációs függvények:
+	count(*)  - count(pk) - count(mező)
+	avg(mezonev)
+	max(mezonev)
+	min(mezonev)
+	sum(mezonev)
+Mikor volt a legelső újkori olimpia?
+Összesen hány ezüstérmet szereztek versenyzőink?
+
+WHERE relációk:
+     =, < , >, <=, >=, <>, 
+     között: mezőnév between érték1 and érték2
+ Hol tartottak olimpiát 1980 és 2000 között
+     tartalmaz: mezőnév like "minta"
+     Minta: Joker-karakterek:
+                  _ - egy karakter lehet a helyén  
+		  % - bármennyi karakter
+	"A%"  - 'A' betűvel kezdődő
+	"_l%" - A második betűje 'l'
+        "%auth%" - Az 'auth' karaktersor szerepel 
+                   VALAHOL a mezőben
+Keressen versenyszámokat, 
+melyben megjelenik a 'kard' szó:
+
+Táblák összekapcsolása
+Milyen költségtípusú pályázatok vannak amelyek számlaértéke 
+10000Ft alatt van?
+
+DML utasítások
+Adatok beszúrása
+1) a) Ismerem a tábla szerkezetét ÉS minden mezőt kitöltöm!
+    INSERT INTO <táblanév>
+    VALUES(mező1adat, mező2adat, mező3adat, mező4adat,...);
+
+   b) Nem ismerem a tábla mezőinek pontos sorrendjét VAGY/ÉS 
+      nem kell minden mezőt kitölteni!
+   INSERT INTO <táblanév>(mező4,mező1,mező2)
+   VALUES(mező4adat, mező1adat, mező2adat); 
+  
+  +1) Több rekord egyidejű felvitele
+   INSERT INTO <táblanév>
+   VALUES (mező1adat, mező2adat,mező3adat),
+          (mező1adat, mező2adat,mező3adat),
+          (mező1adat, mező2adat,mező3adat); 
+
+2) Tábla adatainak módosítása
+   UPDATE <tablanév>
+   SET mezőnév = kifejezés|konstans
+   [WHERE feltétel];
+
+3) Adatok törlése
+  DELETE FROM <táblanév>;
+   ÖÖSSSZZEESS Adatot törli a táblábóóóól!!!!
+ 
+  DELETE FROM <táblanév>
+  WHERE feltétel;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

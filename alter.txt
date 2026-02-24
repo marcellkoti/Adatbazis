@@ -1,0 +1,6 @@
+https://dev.mysql.com/doc/refman/8.4/en/alter-table.html
+
+ALTER TABLE szamla
+ADD CONSTRAINT fk_ktp
+FOREIGN KEY (koltsegtipusid)
+REFERENCES koltsegtipus(id); 

@@ -1,0 +1,17 @@
+Táblák összekapcsolása
+
+1. verzió
+
+SELECT * 
+FROM tábla1, tábla2
+WHERE tábla1.kulcs = tábla2.külsőkulcs;
+
+2.verzió
+a)
+SELECT *
+FROM tábla1 INNER JOIN tábla2 
+            ON tábla1.kulcs = tábla2.külsőkulcs;
+b)
+SELECT *
+FROM tábla1 LEFT/RIGHT JOIN tábla2 
+            ON tábla1.kulcs = tábla2.külsőkulcs;
